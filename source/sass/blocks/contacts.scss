@@ -1,17 +1,22 @@
 .contacts {
+  display: flex;
+}
+
+.contacts ul {
   @include reset;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
 }
 
-.contacts li {
-  margin-left: 4.3vw;
+.contacts__button {
+  margin-left: 38px;
+}
 
-  &:last-child {
-    margin-left: 50px;
-  }
+.contacts li {
+  margin-left: 88px;
 
   &:first-child {
     margin-left: 0;
@@ -37,4 +42,14 @@
 
 .contacts span {
   margin-left: 20px;
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .contacts span {
+    display: none;
+  }
+
+  .contacts__button {
+    display: none;
+  }
 }

@@ -14,12 +14,7 @@
 }
 
 @media (max-width: $tablet-breakpoint) {
-  .header {
-    padding: 0;
-  }
-
-  .header__nav {
-    top: 0;
-    right: 0;
+  .header__wrapper {
+    padding-top: 20px;
   }
 }
