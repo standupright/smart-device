@@ -1,0 +1,27 @@
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link img {
+  margin-right: 16px;
+}
+
+.logo-link span {
+  color: $white;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 29px;
+}
+
+.logo-link p {
+  @include reset;
+  color: $gray-additional;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}

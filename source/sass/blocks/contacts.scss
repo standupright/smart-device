@@ -1,0 +1,40 @@
+.contacts {
+  @include reset;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.contacts li {
+  margin-left: 4.3vw;
+
+  &:last-child {
+    margin-left: 50px;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.contacts a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+}
+
+.contacts span {
+  margin-left: 20px;
+}

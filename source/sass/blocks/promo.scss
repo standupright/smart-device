@@ -1,21 +1,21 @@
 .promo {
-  @include container;
-  padding-top: 62px;
-  padding-bottom: 235px;
-  background-color: $gray-darken;
-  background-image: url("../img/main-bike.jpg");
+
+  padding-top: 95px;
+  padding-bottom: 108px;
+  background-color: $green-dark;
+  //background-image: url("../img/main-bg.jpg");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: fill;
   position: relative;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../img/main-bike@2x.jpg");
+    //background-image: url("../img/main-bg@2x.jpg");
   }
 }
 
 .promo__wrapper {
-  @include desktop-wrapper;
+  @include container;
 }
 
 .promo__inner {
@@ -33,10 +33,10 @@
   flex-basis: 330px;
 }
 
-@media (max-width: $tablet-breakpoint) {
+// @media (max-width: $tablet-breakpoint) {
 
-}
+// }
 
-@media (max-width: $mobile-breakpoint) {
+// @media (max-width: $mobile-breakpoint) {
 
-}
+// }

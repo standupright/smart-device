@@ -1,0 +1,24 @@
+.button-request {
+  min-width: 180px;
+  display: block;
+  background: none;
+  color: $white;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 13px 8px 12px;
+  border: 1px solid $white;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+}
