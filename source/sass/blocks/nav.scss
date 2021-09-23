@@ -1,0 +1,155 @@
+.nav {
+  padding: 0 calc((50% - 119px) / 2);
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.nav__wrapper {
+  max-width: 833px;
+  margin: 0 auto;
+}
+
+.nav__list {
+  @include reset;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -9px;
+    left: -20px;
+    width: 105%;
+    height: 1px;
+    background-color: $white;
+    opacity: 0.2;
+  }
+}
+
+.nav__item {
+  margin-right: 20px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.nav__link {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: -0.01em;
+  color: $white;
+  opacity: 0.7;
+
+  &:hover,
+  &:focus {
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .nav {
+    padding: 0;
+
+    &--nojs {
+      position: static;
+      padding-top: 48px;
+      width: 100%;
+      min-height: 568px;
+    }
+
+    &--nojs .nav__toggle {
+      display: none;
+    }
+
+    &--closed {
+      height: 50px;
+      width: 50px;
+    }
+
+    &--opened {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100vh;
+      background-color: $white;
+    }
+
+    &--closed .nav__list {
+      display: none;
+    }
+
+    &--closed .nav__toggle {
+      display: block;
+      background-image: url("../img/icon-burger.svg");
+      background-color: $turquoise;
+    }
+
+    &--opened .nav__toggle {
+      display: block;
+      margin-left: auto;
+      margin-bottom: 48px;
+      background-color: $white;
+      background-image: url("../img/icon-close.svg");
+    }
+  }
+
+  .nav__list {
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .nav__link {
+    width: 100%;
+    display: block;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    padding: 17px 35px 17px 16px;
+    color: $gray-additional-dark;
+    background-color: $gray-additional;
+    position: relative;
+    opacity: 1;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 17px;
+      right: 16px;
+      width: 25px;
+      height: 25px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("../img/icon-arrow-right.svg");
+    }
+  }
+
+  .nav__item {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

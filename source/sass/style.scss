@@ -1,0 +1,44 @@
+// normalize
+@import "./general/normalize.scss";
+
+// fonts
+@import "./general/fonts.scss";
+
+// variables
+@import "./general/variables.scss";
+
+//mixins
+@import "./general/mixin.scss";
+
+// general styles
+@import "./general/common.scss";
+
+// header
+@import "./blocks/header.scss";
+
+// nav
+@import "./blocks/nav.scss";
+
+// promo
+@import "./blocks/promo.scss";
+
+// description-promo
+@import "./blocks/description-promo.scss";
+
+//form-field
+@import "./blocks/form-field.scss";
+
+//facts
+@import "./blocks/facts.scss";
+
+// bicycles
+@import "./blocks/bicycles.scss";
+
+// video-bike
+@import "./blocks/video-bike.scss";
+
+//footer
+@import "./blocks/footer.scss";
+
+// contacts
+@import "./blocks/contacts.scss";

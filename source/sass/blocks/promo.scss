@@ -1,0 +1,42 @@
+.promo {
+  @include container;
+  padding-top: 62px;
+  padding-bottom: 235px;
+  background-color: $gray-darken;
+  background-image: url("../img/main-bike.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: fill;
+  position: relative;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/main-bike@2x.jpg");
+  }
+}
+
+.promo__wrapper {
+  @include desktop-wrapper;
+}
+
+.promo__inner {
+  display: flex;
+  padding: 0 calc(20% - 8px);
+  padding-top: 258px;
+  justify-content: space-between;
+}
+
+.promo__description-promo {
+  flex-basis: 393px;
+}
+
+.promo__form-field {
+  flex-basis: 330px;
+}
+
+@media (max-width: $tablet-breakpoint) {
+
+}
+
+@media (max-width: $mobile-breakpoint) {
+
+}
