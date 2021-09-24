@@ -26,3 +26,19 @@
   font-size: 12px;
   line-height: 14px;
 }
+
+
+@media (max-width: $mobile-breakpoint) {
+  .logo-link img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo-link span {
+    display: none;
+  }
+
+  .logo-link p {
+    display: none;
+  }
+}
