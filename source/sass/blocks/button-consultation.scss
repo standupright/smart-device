@@ -1,0 +1,39 @@
+.button-consultation {
+  color: $white;
+  display: block;
+  border-radius: 5px;
+  padding: 17px 28px;
+  background-color: $blue;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.button-consultation span:last-child {
+  display: none;
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .button-consultation {
+    padding: 17px 14px;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .button-consultation {
+    padding: 17px 11px;
+  }
+
+  .button-consultation span:first-child {
+    display: none;
+  }
+
+  .button-consultation span:last-child {
+    display: inline;
+  }
+}
