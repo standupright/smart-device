@@ -2,23 +2,25 @@
   display: flex;
   align-items: center;
   min-width: 202px;
-}
-
-.logo-link img {
-  margin-right: 16px;
-}
-
-.logo-link span {
   color: $white;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 25px;
   line-height: 29px;
+
+  &--dark {
+    color: $green-dark;
+  }
+}
+
+.logo-link img {
+  margin-right: 16px;
 }
 
 .logo-link p {
   @include reset;
+  text-align: left;
   color: $gray-additional;
   font-family: "Roboto", "Arial", sans-serif;
   font-style: normal;

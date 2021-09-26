@@ -8,10 +8,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Smart Device</title>
   <link rel="stylesheet" href="css/style.min.css">
-  <link rel="preload" href="fonts/opensans-light.woff2" as="font" type="font/woff2" crossorigin="">
-  <link rel="preload" href="fonts/opensans-regular.woff2" as="font" type="font/woff2" crossorigin="">
-  <link rel="preload" href="fonts/opensans-semibold.woff2" as="font" type="font/woff2" crossorigin="">
-  <link rel="preload" href="fonts/opensans-bold.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/robotocondensed-regular.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/robotocondensed-bold.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/ptmono-regular.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/roboto-medium.woff2" as="font" type="font/woff2" crossorigin="">
 </head>
 
 <body id="body">
@@ -19,7 +19,7 @@
     <div class="header__wrapper">
       <a class="header__logo-link logo-link">
         <img src="img/main-logo.svg" alt="Логотип" width="52" height="52">
-        <div>
+        <div class="logo-link__title logo-link-title">
           <span>Smart Device</span>
           <p>умные технологии</p>
         </div>
@@ -104,34 +104,119 @@
     </section>
   </main>
   <footer class="footer">
+    <h2 class="visually-hidden">Вся информация про нас</h2>
     <div class="footer__wrapper">
-      <h2 id="contacts">Как нас найти?</h2>
-      <p>Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19</p>
-      <picture>
-        <source srcset="img/map.webp 1x, img/map.webp 2x" type="image/webp">
-        <!-- 1x: 957px; 2x: 1914px -->
-        <img src="img/map.jpg" loading="lazy" alt="Местоположение на карте" srcset="img/map@2x.jpg 2x" width="957" height="530">
-      </picture>
-      <ul class="contacts">
-        <li>
-          <a href="email:puteshestviemechta@gmail.ru">
-            <svg width="26" height="20" xmlns="http://www.w3.org/2000/svg" aria-labelledby="email-footer">
-              <title id="email-footer">Наша почта</title>
-              <use xlink:href="img/sprite_auto.svg#icon-message"></use>
-            </svg>
-            <span>puteshestviemechta@gmail.ru</span>
-          </a>
-        </li>
-        <li>
-          <a href="tel:+749978468446">
-            <svg fill="none" width="21" height="24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="phone-footer">
-              <title id="phone-footer">Наш телефон</title>
-              <use xlink:href="img/sprite_auto.svg#icon-phone"></use>
-            </svg>
-            <span>+7 (499) -784-684-46</span>
-          </a>
-        </li>
-      </ul>
+      <div class="footer__socials socials">
+        <a class="socials__logo-link logo-link logo-link--dark">
+          <img src="img/main-logo.svg" alt="Логотип" width="52" height="52">
+          <div>
+            <span>Service Device</span>
+            <p>умные технологии</p>
+          </div>
+        </a>
+        <div class="socials__years">
+          <p>1999-2018 SD Service Devices</p>
+        </div>
+        <ul>
+          <li>
+            <a href="#">
+              <svg width="27" height="27" xmlns="http://www.w3.org/2000/svg" aria-labelledby="facebook-footer">
+                <title id="facebook-footer">Facebook</title>
+                <use xlink:href="img/sprite_auto.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg width="27" height="27" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ok-ru-footer">
+                <title id="ok-ru-footer">Одноклассники</title>
+                <use xlink:href="img/sprite_auto.svg#icon-ok-ru"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg width="27" height="27" xmlns="http://www.w3.org/2000/svg" aria-labelledby="vk-footer">
+                <title id="vk-footer">Вконтакте</title>
+                <use xlink:href="img/sprite_auto.svg#icon-vk"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__lists footer-lists">
+        <div>
+          <h3>Разделы сайта</h3>
+          <div class="footer-lists__navigation">
+            <ul>
+              <li>
+                <a href="#">
+                  О компании
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Продукты
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Производство печатных плат
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Монтаж печатных плат
+                </a>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <a href="#">
+                  Комплектующие
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Доставка
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="footer__contacts">
+          <h3>Наш офис</h3>
+          <p>г. Мытищи, Олимпийский проспект, д.10</p>
+          <ul>
+            <li>
+              <a href="tel:+74955894050">
+                +7 (495) 589-40-50
+              </a>
+            </li>
+            <li>
+              <a href="tel:+79250038767">
+                +7 (925) 003-87-67
+              </a>
+            </li>
+            <li>
+              <a href="tel:+792692608079">
+                +7 (926) 926-080-79
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="footer__autors">
     </div>
   </footer>
   <script src="js/script.js"></script>

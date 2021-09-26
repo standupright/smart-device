@@ -1,0 +1,32 @@
+.socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.socials__logo-link {
+  margin-bottom: 53px;
+}
+
+.socials p {
+  @include reset;
+}
+
+.socials__years {
+  display: none;
+}
+
+.socials ul {
+  @include reset;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 112px;
+}
+
+.socials svg {
+  &:focus,
+  &:hover {
+    opacity: 0.5;
+  }
+}
