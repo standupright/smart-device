@@ -13,6 +13,15 @@
 
 .socials__years {
   display: none;
+  color: $green-dark;
+  opacity: 0.5;
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .socials ul {
@@ -21,12 +30,44 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 112px;
+  width: 112px;
 }
 
 .socials svg {
   &:focus,
   &:hover {
     opacity: 0.5;
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .socials {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .socials__logo-link {
+    margin-bottom: 0;
+  }
+
+  .socials__years {
+    display: block;
+  }
+}
+
+
+@media (max-width: $mobile-breakpoint) {
+  .socials {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .socials__logo-link {
+    margin-bottom: 26px;
+  }
+
+  .socials__years {
+    margin-bottom: 31px;
   }
 }
