@@ -79,6 +79,10 @@
     overflow: hidden;
   }
 
+  .footer-lists li:last-child {
+    margin-bottom: 20px;
+  }
+
   .footer-lists h3 {
     padding-top: 28px;
     padding-bottom: 28px;
@@ -102,9 +106,6 @@
   .footer-lists__navigation {
     flex-direction: column;
     flex-wrap: nowrap;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
   }
 
   .footer-lists__contacts {
@@ -113,8 +114,5 @@
 
   .footer-lists__contacts-wrapper {
     padding-right: 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
   }
 }

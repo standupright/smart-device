@@ -1,6 +1,10 @@
 @media (max-width: $mobile-breakpoint) {
-  .accordeon {
+  .accordeon__button {
     position: relative;
+
+    &--nojs::after {
+      display: none;
+    }
 
     &::before {
       position: absolute;
@@ -24,6 +28,16 @@
 
     &--active::after {
       display: none;
+    }
+  }
+
+  .accordeon__wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+
+    &--nojs {
+      max-height: fit-content;
     }
   }
 }
