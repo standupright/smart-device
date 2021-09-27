@@ -12,6 +12,11 @@
   text-align: center;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
 }
 
 .button-consultation span:last-child {

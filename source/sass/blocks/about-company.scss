@@ -1,0 +1,151 @@
+.about-company {
+  overflow: hidden;
+  padding-bottom: 96px;
+}
+
+.about-company__wrapper {
+  @include container-mini;
+  display: flex;
+}
+
+.about-company__img-wrapper {
+  min-width: 180px;
+  height: 317px;
+  position: relative;
+}
+
+.about-company img {
+  position: absolute;
+  left: -30px;
+  top: 0;
+  object-fit: contain;
+  min-width: 220px;
+  height: 317px;
+}
+
+
+.about-company__text-wrapper {
+  padding-right: 5px;
+}
+
+.about-company p {
+  @include reset;
+  color: $gray;
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+
+  &:first-of-type {
+    margin-bottom: 20px;
+  }
+
+  &:last-of-type {
+    display: none;
+  }
+}
+
+.about-company h2 {
+  @include reset;
+  margin-bottom: 18px;
+  color: $gray;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+}
+
+
+.about-company a {
+  margin-top: 37px;
+  display: block;
+  color: $blue;
+  width: 180px;
+  padding: 14px;
+  background-color: $white;
+  border: 1px solid $blue;
+  border-radius: 5px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .about-company__img-wrapper {
+    min-width: 130px;
+    height: 361px;
+  }
+
+  .about-company__text-wrapper {
+    padding-right: 0;
+    padding-left: 57px;
+    padding-top: 12px;
+  }
+
+  .about-company img {
+    left: -33px;
+    top: 11px;
+    min-width: 251px;
+    height: 361px;
+  }
+
+  .about-company h2 {
+    font-size: 32px;
+    line-height: 140.62%;
+    margin-bottom: 27px;
+  }
+
+  .about-company p {
+    &:nth-of-type(3n-1) {
+      display: none;
+    }
+
+    &:last-of-type {
+      display: inline;
+    }
+  }
+
+  .about-company a {
+    margin-top: 39px;
+  }
+}
+
+
+@media (max-width: $mobile-breakpoint) {
+  .about-company__img-wrapper {
+    display: none;
+  }
+
+  .about-company h2 {
+    font-size: 28px;
+    line-height: 140.62%;
+    margin-bottom: 22px;
+  }
+
+  .about-company__text-wrapper {
+    padding: 0;
+  }
+
+  .about-company p {
+    &:first-of-type {
+      margin-bottom: 40px;
+    }
+  }
+
+  .about-company a {
+    margin-top: 26px;
+  }
+}

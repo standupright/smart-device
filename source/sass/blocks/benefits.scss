@@ -1,0 +1,46 @@
+.benefits {
+  padding: 110px 0;
+}
+
+.benefits__wrapper {
+  @include container-mini;
+}
+
+.benefits ul {
+  @include reset;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, minmax(299px, 1fr));
+  gap: 30px;
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .benefits {
+    padding: 54px 0;
+  }
+
+  .benefits ul {
+    grid-template-rows: repeat(2, min-content);
+  }
+}
+
+
+@media (max-width: $mobile-breakpoint) {
+  .benefits {
+    padding-top: 37px;
+    padding-bottom: 55px;
+  }
+
+  .benefits__wrapper {
+    padding: 0 16px;
+  }
+
+  .benefits ul {
+    @include reset;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

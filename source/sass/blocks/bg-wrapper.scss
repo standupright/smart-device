@@ -1,0 +1,39 @@
+.bg-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 53%;
+    left: 50%;
+    width: 100%;
+    max-width: 1920px;
+    height: 1346px;
+    transform: translate(-50%, -50%);
+    background-image: url("../img/big-vectors.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .bg-wrapper {
+    &::before {
+      top: 49%;
+      left: 79%;
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .bg-wrapper {
+    &::before {
+      top: 16.5%;
+      left: 88%;
+      transform: translate(-50%, 10%);
+    }
+  }
+}
