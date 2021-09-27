@@ -1,0 +1,92 @@
+.description-promo h2 {
+  @include reset;
+  margin-bottom: 28px;
+  color: $white;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.description-promo p {
+  @include reset;
+  margin-bottom: 44px;
+  margin-left: 92px;
+  color: $white;
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 34px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 66px;
+    height: 2px;
+    background-color: $white;
+    left: -100px;
+    top: 16px;
+  }
+}
+
+.description-promo__button {
+  max-width: 407px;
+  margin-left: 92px;
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .description-promo h2 {
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 0.07em;
+  }
+
+  .description-promo p {
+    font-size: 18px;
+    line-height: 156.8%;
+    margin-left: 51px;
+    margin-bottom: 57px;
+
+    &::before {
+      width: 32px;
+      left: -47px;
+      top: 17px;
+    }
+  }
+
+  .description-promo__button {
+    max-width: 379px;
+    margin-left: 51px;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .description-promo h2 {
+    font-size: 40px;
+    line-height: 47px;
+    letter-spacing: 0.07em;
+  }
+
+  .description-promo p {
+    font-size: 16px;
+    line-height: 156.8%;
+    margin-left: 48px;
+    margin-bottom: 42px;
+
+    &::before {
+      width: 32px;
+      left: -45px;
+      top: 14px;
+    }
+  }
+
+  .description-promo__button {
+    max-width: 100%;
+    margin-left: 0;
+  }
+}

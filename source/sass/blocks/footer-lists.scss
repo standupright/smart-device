@@ -1,0 +1,118 @@
+.footer-lists {
+  display: grid;
+  grid-template-columns: 1.8fr minmax(355px, 1fr);
+}
+
+.footer-lists__navigation {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-lists ul {
+  @include reset;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+
+  &:first-of-type {
+    margin-right: 11.5%;
+  }
+}
+
+.footer-lists__contacts {
+  padding-left: 20px;
+}
+
+.footer-lists h3 {
+  @include reset;
+  margin-bottom: 22px;
+  color: $green-dark;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.footer-lists p {
+  @include reset;
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  color: $green-dark;
+  opacity: 0.5;
+}
+
+.footer-lists a {
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  color: $green-dark;
+  opacity: 0.5;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .footer-lists__navigation {
+    flex-direction: column;
+  }
+
+  .footer-lists__contacts {
+    padding-left: 14px;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .footer-lists {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .footer-lists li:last-child {
+    margin-bottom: 20px;
+  }
+
+  .footer-lists h3 {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    margin: 0;
+  }
+
+  .footer-lists__navigation-wrapper {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: -25%;
+      content: "";
+      width: 150%;
+      height: 1px;
+      background-color: $gray-light;
+    }
+  }
+
+  .footer-lists__navigation {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .footer-lists__contacts {
+    padding: 0;
+  }
+
+  .footer-lists__contacts-wrapper {
+    padding-right: 20px;
+  }
+}

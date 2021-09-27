@@ -1,0 +1,44 @@
+@media (max-width: $mobile-breakpoint) {
+  .accordeon__button {
+    position: relative;
+
+    &--nojs::after {
+      display: none;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 16px;
+      height: 1px;
+      top: 30px;
+      right: 0;
+      background-color: $gray-lighten;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 1px;
+      top: 22px;
+      right: 7px;
+      background-color: $gray-lighten;
+    }
+
+    &--active::after {
+      display: none;
+    }
+  }
+
+  .accordeon__wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+
+    &--nojs {
+      max-height: fit-content;
+    }
+  }
+}
+

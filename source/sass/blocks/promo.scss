@@ -1,16 +1,16 @@
 .promo {
-
   padding-top: 95px;
-  padding-bottom: 108px;
+  padding-bottom: 278px;
   background-color: $green-dark;
-  //background-image: url("../img/main-bg.jpg");
+  background-image: url("../img/main-bg.jpg");
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: fill;
+  background-size: cover;
   position: relative;
+  overflow: hidden;
 
   @media (min-resolution: 2dppx) {
-    //background-image: url("../img/main-bg@2x.jpg");
+    background-image: url("../img/main-bg@2x.jpg");
   }
 }
 
@@ -19,24 +19,109 @@
 }
 
 .promo__inner {
-  display: flex;
-  padding: 0 calc(20% - 8px);
-  padding-top: 258px;
-  justify-content: space-between;
+  padding-right: calc(50% - 40px);
+  padding-top: 220px;
+  position: relative;
 }
 
 .promo__description-promo {
-  flex-basis: 393px;
+  z-index: 3;
+  position: relative;
 }
 
-.promo__form-field {
-  flex-basis: 330px;
+.promo__pcb {
+  z-index: 2;
+  position: absolute;
+  top: 163px;
+  left: calc(60% - 64px);
+  width: 705px;
+  height: 515px;
 }
 
-// @media (max-width: $tablet-breakpoint) {
+.promo__triangles {
+  z-index: 1;
+  position: absolute;
+  top: 22px;
+  left: calc(60% - 72px);
+  width: 671px;
+  height: 641px;
 
-// }
+  &::after {
+    z-index: 1;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 671px;
+    height: 641px;
+    background-image: url("../img/big-triangle.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
 
-// @media (max-width: $mobile-breakpoint) {
+@media (max-width: $tablet-breakpoint) {
+  .promo {
+    padding-bottom: 164px;
+  }
 
-// }
+  .promo__inner {
+    padding-right: 0;
+    max-width: 500px;
+    padding-top: 93px;
+    padding-left: 62px;
+  }
+
+  .promo__pcb {
+    top: 18px;
+    left: calc(110% - 64px);
+    width: 465px;
+    height: 340px;
+  }
+
+  .promo__triangles {
+    top: -134px;
+    left: calc(96% - 64px);
+    width: 528px;
+    height: 502px;
+
+    &::after {
+      width: 528px;
+      height: 502px;
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .promo {
+    padding-bottom: 71px;
+  }
+
+  .promo__inner {
+    padding-right: 0;
+    max-width: 100%;
+    padding-top: 192px;
+    padding-left: 0;
+  }
+
+  .promo__pcb {
+    top: 106px;
+    left: 56%;
+    transform: translate(-50%, -50%);
+    width: 301px;
+    height: 220px;
+  }
+
+  .promo__triangles {
+    top: 102px;
+    left: 60%;
+    transform: translate(-7%, -50%);
+    width: 505px;
+    height: 479px;
+
+    &::after {
+      width: 505px;
+      height: 479px;
+    }
+  }
+}
