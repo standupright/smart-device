@@ -1,0 +1,73 @@
+.services {
+  padding-top: 93px;
+  padding-bottom: 127px;
+  background-color: $gray-darkest;
+}
+
+.services__wrapper {
+  @include container-mini;
+}
+
+.services h2 {
+  @include reset;
+  margin-bottom: 47px;
+  color: $white;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+}
+
+.services ul {
+  @include reset;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.services li {
+  margin-right: 30px;
+  position: relative;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &:hover img,
+  &:focus img {
+    opacity: 0.5;
+  }
+}
+
+.services img {
+  opacity: 0.2;
+}
+
+.services h3 {
+  @include reset;
+  width: 175px;
+  color: $white;
+  position: absolute;
+  left: 44px;
+  top: 53px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.services__forward {
+  position: absolute;
+  border: none;
+  bottom: 4px;
+  right: 0;
+  display: block;
+  width: 63px;
+  height: 63px;
+  background-color: $blue;
+  background-image: url("../img/icon-arrow-right.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
