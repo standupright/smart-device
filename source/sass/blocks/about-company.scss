@@ -84,6 +84,10 @@
 }
 
 @media (max-width: $tablet-breakpoint) {
+  .about-company {
+    padding-bottom: 83px;
+  }
+
   .about-company__img-wrapper {
     min-width: 130px;
     height: 361px;
@@ -125,6 +129,10 @@
 
 
 @media (max-width: $mobile-breakpoint) {
+  .about-company {
+    padding-bottom: 65px;
+  }
+
   .about-company__img-wrapper {
     display: none;
   }
