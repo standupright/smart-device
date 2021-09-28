@@ -1,0 +1,77 @@
+.popup {
+  width: 490px;
+  height: 605px;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 38.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  z-index: 20;
+  background-color: $blue;
+}
+
+.popup__form-wrapper {
+  padding: 30px 39px 36px;
+  position: relative;
+}
+
+.popup__close button {
+  position: absolute;
+  content: "";
+  width: 17px;
+  height: 17px;
+  right: 20px;
+  top: 20px;
+  border: none;
+  background-image: url("../img/icon-close.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    opacity: 0.7;
+    outline: 1px solid $white;
+  }
+}
+
+.popup.modal-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup h3 {
+  font-size: 28px;
+  line-height: 140.62%;
+}
+
+.popup p {
+  margin-bottom: 33px;
+  padding-right: 40px;
+}
+
+.popup input {
+  margin-bottom: 30px;
+  padding: 14px 25px;
+}
+
+.popup textarea {
+  height: 104px;
+  margin-bottom: 30px;
+  padding: 16px 25px;
+}
+
+.popup__submit-wrapper {
+  margin-bottom: 28px;
+}
+
+.popup__checkbox-wrapper label {
+  padding-left: 50px;
+  padding-right: 20px;
+
+  &::before {
+    left: 0;
+  }
+}
