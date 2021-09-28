@@ -1,0 +1,159 @@
+.form {
+  color: $white;
+}
+
+.form h3 {
+  @include reset;
+  margin-bottom: 10px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+}
+
+.form p {
+  @include reset;
+  margin-bottom: 49px;
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.form__inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 31px;
+  margin-bottom: 40px;
+}
+
+.form input {
+  border: none;
+  background-color: $white-opacity;
+  width: 100%;
+  padding: 14px 16px;
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $white;
+
+  &::placeholder {
+    color: $white;
+  }
+}
+
+.form textarea {
+  color: $white;
+  resize: none;
+  margin-bottom: 43px;
+  padding: 13px 16px;
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  border: none;
+  background-color: $white-opacity;
+  width: 100%;
+  height: 154px;
+  scroll-behavior: auto;
+
+  &::placeholder {
+    color: $white;
+  }
+}
+
+.form__buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 38px;
+}
+
+.form__submit-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.form button {
+  padding: 14px 18px;
+  flex-basis: 270px;
+  color: $white;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid $white;
+  border-radius: 5px;
+  background: none;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-color: $white;
+    color: $blue;
+  }
+}
+
+.form__checkbox-wrapper {
+  position: relative;
+}
+
+.form__checkbox-wrapper label {
+  padding-left: 37px;
+  padding-top: 6px;
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  opacity: 0.8;
+  position: relative;
+  display: block;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 7px;
+    left: 7px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $white;
+    background-color: $blue;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.form__checkbox-wrapper input:checked + label {
+  &::before {
+    background-image: url("../img/icon-checked.svg");
+  }
+}
+
+.form__checkbox-wrapper input:focus + label {
+  &::before {
+    outline: 1px solid $black;
+  }
+}
+
+.form__checkbox-wrapper input:hover + label {
+  &::before {
+    outline: none;
+  }
+}
+

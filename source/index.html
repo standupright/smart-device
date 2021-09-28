@@ -190,6 +190,40 @@
         </ul>
       </div>
     </section>
+    <section class="questions">
+      <h2 class="visually-hidden">Форма для связи с компанией</h2>
+      <div class="questions__wrapper">
+        <div class="questions__image-wrapper">
+          <picture>
+            <source srcset="img/airplane.webp 1x, img/airplane@2x.webp 2x" type="image/webp">
+            <!-- 1x: 370px; 2x: 740px -->
+            <img src="img/airplane.png" alt="Фото светодиодной ленты" srcset="img/airplane@2x.png 2x" width="511" height="288">
+          </picture>
+          <div class="questions__triangle-wrapper"></div>
+        </div>
+        <form class="questions__form-wrapper form" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+          <h3>Остались вопросы? Задайте их нам!</h3>
+          <p>Мы проконсультируем Вас бесплатно</p>
+          <div class="form__inputs">
+            <label class="visually-hidden" for="name">Имя</label>
+            <input id="name" placeholder="Имя"  type="text">
+            <label class="visually-hidden" for="tel">Имя</label>
+            <input id="tel" placeholder="Телефон"  type="text">
+          </div>
+          <textarea name="area-question" id="area-question" placeholder="Ваш вопрос"></textarea>
+          <div class="form__buttons">
+            <div class="form__submit-wrapper">
+              <button type="submit">Задать вопрос</button>
+            </div>
+
+            <div class="form__checkbox-wrapper">
+              <input class="visually-hidden" type="checkbox" name="agree" id="agree-checkox">
+              <label for="agree-checkox">Я согласен на обработку  персональных данных</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
   <footer class="footer">
     <h2 class="visually-hidden">Вся информация про нас</h2>

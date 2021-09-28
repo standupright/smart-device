@@ -1,0 +1,32 @@
+.questions {
+  background-color: $blue;
+  color: $white;
+  padding-top: 90px;
+  padding-bottom: 114px;
+}
+
+.questions__wrapper {
+  @include container-mini;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.questions__image-wrapper {
+  padding-right: 114px;
+  position: relative;
+}
+
+.questions__image-wrapper img {
+  position: absolute;
+  top: 46%;
+  left: -26px;
+  transform: translate(0, -48%);
+}
+
+.questions__triangle-wrapper {
+  position: absolute;
+}
+
+.questions__form-wrapper {
+  padding-left: 10px;
+}
