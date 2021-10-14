@@ -213,8 +213,9 @@
               <label class="visually-hidden" for="name">Имя</label>
               <input required="" id="name" placeholder="Имя" type="text">
               <label class="visually-hidden" for="tel">Телефон</label>
-              <input required="" id="tel" placeholder="Телефон" type="text">
+              <input required="" id="tel" placeholder="Телефон" type="text" maxlength="16" pattern="^\+7\([0-9]{3}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$">
             </div>
+
             <textarea name="area-question" id="area-question" placeholder="Ваш вопрос"></textarea>
             <div class="form__buttons">
               <div class="form__submit-wrapper">

@@ -52,7 +52,6 @@ for (let i = 0; i < accordeonButtons.length; i++) {
 
 // Modal-form
 const OVERFLOW_HIDDEN = 'overflow-hidden';
-
 const body = document.querySelector('#body');
 const MODAL_SHOW_CLASS = 'modal-show';
 const overlay = document.querySelector('.overlay');
@@ -163,6 +162,32 @@ const setCheckboxCustomValidity = function (evt) {
   }
 };
 
+const onFocusTel = function (evt) {
+  if (evt.target.value === '') {
+    evt.target.value = '+7(';
+  }
+};
+
+const setPhoneMask = function () {
+  let arr = this.value;
+  arr.replace(/[^\dA-Z]/g, '').split('');
+
+  if (arr.length > 5 && arr.length < 7) {
+    arr = arr.concat(')');
+  }
+
+  if (arr.length > 9 && arr.length < 11) {
+    arr = arr.concat('-');
+  }
+
+  if (arr.length > 12 && arr.length < 14) {
+    arr = arr.concat('-');
+  }
+
+  this.value = arr.toString().replace(/[,]/g, '');
+};
+
+
 if (popupName) {
   popupName.addEventListener('invalid', setNameCustomValidity);
 }
@@ -182,6 +207,8 @@ if (nameForm) {
 
 if (telForm) {
   telForm.addEventListener('invalid', setTelCustomValidity);
+  telForm.addEventListener('focus', onFocusTel);
+  telForm.addEventListener('input', setPhoneMask);
 }
 
 if (agreeCheckoboxForm) {
@@ -229,7 +256,7 @@ if (storageQuestion && areaQuestionForm) {
 }
 
 // Событие отправки Modal формы
-const submitForm = function (evt) {
+const onSubmitPopupForm = function (evt) {
   evt.preventDefault();
 
   if (isStorageSupport) {
@@ -237,19 +264,34 @@ const submitForm = function (evt) {
     localStorage.setItem('tel', popupTel.value);
     localStorage.setItem('question', popupArea.value);
   }
-
+  popupName.value = '';
+  popupTel.value = '';
+  popupArea.value = '';
   popupAgreeCheckox.checked = false;
-  agreeCheckoboxForm.checked = false;
+  closeModal();
 };
 
 if (popupForm) {
-  popupForm.addEventListener('submit', (evt) => {
-    submitForm(evt);
-    closeModal();
-  });
+  popupForm.addEventListener('submit', onSubmitPopupForm);
 }
+
+// Событие отправки формы question
+const onSubmitQuestionForm = function (evt) {
+  evt.preventDefault();
+
+  if (isStorageSupport) {
+    localStorage.setItem('name', nameForm.value);
+    localStorage.setItem('tel', telForm.value);
+    localStorage.setItem('question', areaQuestionForm.value);
+  }
+
+  nameForm.value = '';
+  telForm.value = '';
+  areaQuestionForm.value = '';
+  agreeCheckoboxForm.checked = false;
+};
 
 // Событие отправки формы в блоке question
 if (formQuestion) {
-  formQuestion.addEventListener('submit', submitForm);
+  formQuestion.addEventListener('submit', onSubmitQuestionForm);
 }
