@@ -6,10 +6,10 @@
     position: absolute;
     z-index: -1;
     content: "";
-    top: 53%;
+    top: 51%;
     left: 50%;
     width: 100%;
-    max-width: 1920px;
+    max-width: 2242px;
     height: 1346px;
     transform: translate(-50%, -50%);
     background-image: url("../img/big-vectors.svg");
@@ -22,8 +22,8 @@
 @media (max-width: $tablet-breakpoint) {
   .bg-wrapper {
     &::before {
-      top: 49%;
-      left: 79%;
+      top: 53%;
+      left: 80%;
     }
   }
 }
@@ -31,7 +31,7 @@
 @media (max-width: $mobile-breakpoint) {
   .bg-wrapper {
     &::before {
-      top: 16.5%;
+      top: 19%;
       left: 88%;
       transform: translate(-50%, 10%);
     }

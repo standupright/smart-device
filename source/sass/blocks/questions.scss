@@ -2,7 +2,7 @@
   background-color: $blue;
   color: $white;
   padding-top: 90px;
-  padding-bottom: 114px;
+  padding-bottom: 111px;
   overflow: hidden;
 }
 
@@ -20,7 +20,7 @@
 .questions__image-wrapper img {
   position: absolute;
   z-index: 2;
-  top: 46%;
+  top: 44%;
   left: -26px;
   transform: translate(0, -48%);
 }
@@ -47,7 +47,7 @@
 .question__triangles-random-wrapper {
   position: absolute;
   top: -55px;
-  right: -450px;
+  right: -521px;
   width: 509px;
   height: 669px;
   background-image: url("../img/triangles-random.svg");
