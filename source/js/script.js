@@ -1,15 +1,9 @@
+// accordeon
 const accordeonButtons = document.querySelectorAll('#accordeon-button');
-const overlay = document.querySelector('.overlay');
-const popup = document.querySelector('.popup');
-const popupClose = document.querySelector('.popup__close');
-const openPopupButton = document.querySelector('#request-button');
-
 const ACTIVE_ACCORDEON_CLASS = 'accordeon__button--active';
 const NOJS_ACCORDEON_CLASS = 'accordeon__button--nojs';
 const NOJS_WRAPPER_CLASS = 'accordeon__wrapper--nojs';
-const MODAL_SHOW_CLASS = 'modal-show';
 
-// accordeon
 const resetMaxHeight = (element) => {
   if (element) {
     element.style.maxHeight = null;
@@ -56,6 +50,28 @@ for (let i = 0; i < accordeonButtons.length; i++) {
   }
 }
 
+// Modal-form
+const OVERFLOW_HIDDEN = 'overflow-hidden';
+
+const body = document.querySelector('#body');
+const MODAL_SHOW_CLASS = 'modal-show';
+const overlay = document.querySelector('.overlay');
+const popup = document.querySelector('.popup');
+const popupClose = document.querySelector('.popup__close');
+const openPopupButton = document.querySelector('#request-button');
+const popupForm = document.querySelector('#popup-form');
+const popupName = document.querySelector('#popup-name');
+const popupTel = document.querySelector('#popup-tel');
+const popupArea = document.querySelector('#popup-area');
+const popupAgreeCheckox = document.querySelector('#popup-agree-checkbox');
+
+// Форма в блоке questionnaire
+const formQuestion = document.querySelector('#question-form');
+const nameForm = document.querySelector('#name');
+const telForm = document.querySelector('#tel');
+const areaQuestionForm = document.querySelector('#area-question');
+const agreeCheckoboxForm = document.querySelector('#agree-checkbox');
+
 // Основные функции для взаимодействия с popup
 const closeModal = () => {
   if (popup) {
@@ -64,6 +80,10 @@ const closeModal = () => {
 
   if (overlay) {
     overlay.classList.remove(MODAL_SHOW_CLASS);
+  }
+
+  if (body) {
+    body.classList.remove(OVERFLOW_HIDDEN);
   }
 };
 
@@ -74,6 +94,10 @@ const openModal = () => {
 
   if (overlay) {
     overlay.classList.add(MODAL_SHOW_CLASS);
+  }
+
+  if (body) {
+    body.classList.add(OVERFLOW_HIDDEN);
   }
 };
 
@@ -112,4 +136,120 @@ if (openPopupButton) {
     openModal();
     addPopupListeners();
   });
+}
+
+// Валидация форм
+const setNameCustomValidity = function (evt) {
+  if (evt.target.validity.valueMissing) {
+    evt.target.setCustomValidity('Обязательное поле');
+  } else {
+    evt.target.setCustomValidity('');
+  }
+};
+
+const setTelCustomValidity = function (evt) {
+  if (evt.target.validity.valueMissing || evt.target.validity.patternMismatch) {
+    evt.target.setCustomValidity('Неверный номер телефона');
+  } else {
+    evt.target.setCustomValidity('');
+  }
+};
+
+const setCheckboxCustomValidity = function (evt) {
+  if (evt.target.validity.valueMissing) {
+    evt.target.setCustomValidity('Подтвердите согласие на обработку персональных данных');
+  } else {
+    evt.target.setCustomValidity('');
+  }
+};
+
+if (popupName) {
+  popupName.addEventListener('invalid', setNameCustomValidity);
+}
+
+if (popupTel) {
+  popupTel.addEventListener('invalid', setTelCustomValidity);
+}
+
+if (popupAgreeCheckox) {
+  popupAgreeCheckox.addEventListener('invalid', setCheckboxCustomValidity);
+}
+
+// Валидация формы блока question
+if (nameForm) {
+  nameForm.addEventListener('invalid', setNameCustomValidity);
+}
+
+if (telForm) {
+  telForm.addEventListener('invalid', setTelCustomValidity);
+}
+
+if (agreeCheckoboxForm) {
+  agreeCheckoboxForm.addEventListener('invalid', setCheckboxCustomValidity);
+}
+
+// Добавление данных в localstorage
+let isStorageSupport = true;
+let storageName = '';
+let storageTel = '';
+let storageQuestion = '';
+
+try {
+  storageName = localStorage.getItem('name');
+  storageTel = localStorage.getItem('tel');
+  storageQuestion = localStorage.getItem('question');
+} catch (err) {
+  isStorageSupport = false;
+}
+
+// Заполнение данных из localStorage в формы
+
+if (storageName && popupName) {
+  popupName.value = storageName;
+}
+
+if (storageTel && popupTel) {
+  popupTel.value = storageTel;
+}
+
+if (storageQuestion && popupArea) {
+  popupArea.value = storageQuestion;
+}
+
+if (storageName && nameForm) {
+  nameForm.value = storageName;
+}
+
+if (storageTel && telForm) {
+  telForm.value = storageTel;
+}
+
+if (storageQuestion && areaQuestionForm) {
+  areaQuestionForm.value = storageQuestion;
+}
+
+// Событие отправки Modal формы
+const submitForm = function (evt) {
+  evt.preventDefault();
+
+  if (isStorageSupport) {
+    localStorage.setItem('name', popupName.value);
+    localStorage.setItem('tel', popupTel.value);
+    localStorage.setItem('question', popupArea.value);
+  }
+
+  popupAgreeCheckox.checked = false;
+  agreeCheckoboxForm.checked = false;
+};
+
+if (popupForm) {
+  popupForm.addEventListener('submit', (evt) => {
+    submitForm(evt);
+    closeModal();
+  });
+}
+
+// Событие отправки формы в блоке question
+if (formQuestion) {
+  formQuestion.addEventListener('submit', submitForm);
 }

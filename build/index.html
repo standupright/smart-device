@@ -206,14 +206,14 @@
           <div class="questions__triangle-wrapper"></div>
         </div>
         <div class="questions__inner">
-          <form class="questions__form-wrapper form" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+          <form id="question-form" class="questions__form-wrapper form" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
             <h3>Остались вопросы? Задайте их нам!</h3>
             <p>Мы проконсультируем Вас бесплатно</p>
             <div class="form__inputs">
               <label class="visually-hidden" for="name">Имя</label>
-              <input id="name" placeholder="Имя" type="text">
-              <label class="visually-hidden" for="tel">Имя</label>
-              <input id="tel" placeholder="Телефон" type="text">
+              <input required="" id="name" placeholder="Имя" type="text">
+              <label class="visually-hidden" for="tel">Телефон</label>
+              <input required="" id="tel" placeholder="Телефон" type="text">
             </div>
             <textarea name="area-question" id="area-question" placeholder="Ваш вопрос"></textarea>
             <div class="form__buttons">
@@ -222,8 +222,8 @@
               </div>
 
               <div class="form__checkbox-wrapper">
-                <input class="visually-hidden" type="checkbox" name="agree" id="agree-checkox">
-                <label for="agree-checkox">Я согласен на обработку персональных данных</label>
+                <input required="" class="visually-hidden" type="checkbox" name="agree" id="agree-checkbox">
+                <label for="agree-checkbox">Я согласен на обработку персональных данных</label>
               </div>
             </div>
           </form>
@@ -370,7 +370,7 @@
     </div>
   </footer>
   <div class="popup">
-    <form class="form popup__form-wrapper" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+    <form id="popup-form" class="form popup__form-wrapper" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
       <div class="popup__close">
         <button type="button" aria-labelledby="Закрыть окно"></button>
       </div>
@@ -378,17 +378,17 @@
       <h3>Закажите звонок</h3>
       <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
       <label class="visually-hidden" for="popup-name">Имя</label>
-      <input id="popup-name" placeholder="Имя" type="text">
-      <label class="visually-hidden" for="popup-tel">Имя</label>
-      <input id="popup-tel" placeholder="Телефон" type="text">
+      <input required="" id="popup-name" placeholder="Имя" type="text">
+      <label class="visually-hidden" for="popup-tel">Телефон</label>
+      <input required="" id="popup-tel" placeholder="Телефон" type="text">
       <textarea name="popup-area" id="popup-area" placeholder="Ваш вопрос"></textarea>
       <div class="form__submit-wrapper popup__submit-wrapper">
         <button type="submit">Отправить</button>
       </div>
 
       <div class="form__checkbox-wrapper popup__checkbox-wrapper">
-        <input class="visually-hidden" type="checkbox" name="agree" id="popup-agree-checkox">
-        <label for="popup-agree-checkox">Я согласен на обработку персональных данных</label>
+        <input required="" class="visually-hidden" type="checkbox" name="agree" id="popup-agree-checkbox">
+        <label for="popup-agree-checkbox">Я согласен на обработку персональных данных</label>
       </div>
     </form>
   </div>
