@@ -45,8 +45,9 @@ img {
 }
 
 .overlay.modal-show {
-  opacity: 1;
+  opacity: 0.5;
   visibility: visible;
+  background-color: $black;
 }
 
 html {
